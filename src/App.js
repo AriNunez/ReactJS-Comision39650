@@ -1,14 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import { Login } from './Login';
 
 function App() {
+
+  let numero = 12;
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Hola desde React!
         </p>
+        <Login />
+        <p>{numero * numero}</p>
         <a
           className="App-link"
           href="https://reactjs.org"
