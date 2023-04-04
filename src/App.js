@@ -1,28 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-import { Login } from './Login';
+import "./App.css";
+import ItemListContainer from "./components/ItemList/ItemListContainer";
+import NavbarContainer from "./components/Navbar/NavbarContainer";
 
 function App() {
-
-  let numero = 12;
+  let mensajeSaludo = "Bienvenido! Esta es mi primera Pre-Entrega.";
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hola desde React!
-        </p>
-        <Login />
-        <p>{numero * numero}</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavbarContainer />
+      <ItemListContainer mensajeSaludo={mensajeSaludo} />
     </div>
   );
 }

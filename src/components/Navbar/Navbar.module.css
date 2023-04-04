@@ -1,0 +1,25 @@
+.containerNavbar {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(21, 71, 236, 0.438);
+}
+
+.menuNavbar {
+  display: flex;
+  gap: 30px;
+  list-style-type: none;
+  margin: auto;
+}
+
+.logoEmpresa {
+  height: auto;
+  width: 100px;
+  margin-left: 50px;
+}
+
+.enlaces {
+  color: black;
+  text-decoration: none;
+}
