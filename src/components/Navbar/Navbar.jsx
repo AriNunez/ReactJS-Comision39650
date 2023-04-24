@@ -22,7 +22,9 @@ const Navbar = () => {
           <li>Periféricos</li>
         </a>
       </ul>
-      <CartWidget />
+      <div>
+        <CartWidget />
+      </div>
     </div>
   );
 };

@@ -1,7 +1,24 @@
-const ItemList = ({ mensajeSaludo }) => {
+import ItemCard from "./ItemCard";
+
+const ItemList = ({ items }) => {
   return (
     <div>
-      <h2>{mensajeSaludo}</h2>
+      {
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-evenly",
+            flexWrap: "wrap",
+            minHeight: "90vh",
+            padding: "40px",
+            gap: "20px",
+          }}
+        >
+          {items.map((item) => {
+            return <ItemCard item={item} key={item.id} />;
+          })}
+        </div>
+      }
     </div>
   );
 };
