@@ -1,0 +1,29 @@
+.containerDetalleProducto {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 10px;
+}
+
+.containerDetalle {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 300px;
+  color: #000000;
+}
+
+.containerImagen {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+.containerImagen > img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}

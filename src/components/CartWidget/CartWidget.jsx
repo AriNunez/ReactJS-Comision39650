@@ -14,7 +14,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 const CartWidget = () => {
   return (
-    <div style={{ margin: "auto" }}>
+    <div style={{ background: "rgb(255,255,255)", margin: "20px" }}>
       <IconButton aria-label="cart">
         <StyledBadge badgeContent={1} color="primary">
           <ShoppingCartIcon />
