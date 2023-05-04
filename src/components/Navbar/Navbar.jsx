@@ -4,8 +4,28 @@ import styles from "./Navbar.module.css";
 import imgLogo from "../../assets/images/logo-empresa.png";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
+import { db } from "../../firebaseConfig";
+import { getDocs, collection } from "firebase/firestore";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+  const { categories, setCategories } = useState([]);
+
+  useEffect(() => {
+    const categoriesCollection = collection(db, "categories");
+    getDocs(categoriesCollection)
+      .then((res) => {
+        let categoriesResult = res.docs.map((category) => {
+          return {
+            ...category.data(),
+            id: category.id,
+          };
+        });
+        setCategories(categoriesResult);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
   return (
     <div className={styles.containerNavbar}>
       <Link to="/">
