@@ -45,7 +45,7 @@ const Cart = ({
             </div>
           ) : (
             <Link to="/">
-              <Button variant="contained">Agrega productos</Button>
+              <Button variant="contained">Agregar productos al carrito</Button>
             </Link>
           )}
 
