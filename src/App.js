@@ -1,32 +1,33 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemListContainer from "./components/ItemList/ItemListContainer";
-import NavbarContainer from "./components/Navbar/NavbarContainer";
 import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer";
+import CartContainer from "./components/Cart/CartContainer";
+import CartContextProvider from "./context/CartContext";
+import FormCheckoutContainer from "./components/FormCheckout/FormCheckoutContainer";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
-    <div
-      style={{
-        background:
-          "linear-gradient(340deg, #addbf8 0, #509fcc 50%, #0067a2 100%)",
-        height: "1000px",
-      }}
-    >
+    <div>
       <BrowserRouter>
-        <Routes>
-          <Route element={<NavbarContainer />}>
-            <Route path="/" element={<ItemListContainer />} />
-            <Route
-              path="/category/:categoryName"
-              element={<ItemListContainer />}
-            />
-            <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
-            <Route
-              path="*"
-              element={<h1>La ruta a la que intenta acceder no existe</h1>}
-            />
-          </Route>
-        </Routes>
+        <CartContextProvider>
+          <Routes>
+            <Route element={<Navbar />}>
+              <Route path="/" element={<ItemListContainer />} />
+              <Route
+                path="/category/:categoryName"
+                element={<ItemListContainer />}
+              />
+              <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
+              <Route path="/cart" element={<CartContainer />} />
+              <Route path="/checkout" element={<FormCheckoutContainer />} />
+              <Route
+                path="*"
+                element={<h1>La ruta a la que intenta acceder no existe</h1>}
+              />
+            </Route>
+          </Routes>
+        </CartContextProvider>
       </BrowserRouter>
     </div>
   );
